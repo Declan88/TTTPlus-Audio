@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Audio Redirect</title>
+</head>
+<body>
+    <script>
+        const audioFiles = [
+            './audio/song1.mp3',
+            './audio/song2.mp3',
+            './audio/song3.mp3'
+            // Add more files here
+        ];
+        
+        const randomIndex = Math.floor(Math.random() * audioFiles.length);
+        const selectedFile = audioFiles[randomIndex];
+        
+        // Redirect to the random file
+        window.location.href = selectedFile;
+    </script>
+    <p>Redirecting to random audio...</p>
+</body>
+</html>
