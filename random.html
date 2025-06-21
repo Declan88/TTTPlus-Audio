@@ -13,9 +13,19 @@
         const randomIndex = Math.floor(Math.random() * audioFiles.length);
         const selectedFile = audioFiles[randomIndex];
         
-        // Redirect to the random file
+        // For browsers: create audio element
+        const audio = document.createElement('audio');
+        audio.controls = true;
+        audio.autoplay = true;
+        audio.src = selectedFile;
+        document.body.appendChild(audio);
+        
+        // For Unreal Engine: redirect
         window.location.href = selectedFile;
     </script>
-    <p>Redirecting to random audio...</p>
+    <p>Playing random audio: <span id="filename"></span></p>
+    <script>
+        document.getElementById('filename').textContent = selectedFile;
+    </script>
 </body>
 </html>
